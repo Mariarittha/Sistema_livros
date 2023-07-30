@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block center %}
+
+<div class="container text-center">
+    <div class="row">
+
+      <div class="col m-4">
+        <img src="{{ livros.imagem.url }}" alt="">
+      </div>
+
+
+      <div class="col m-4 text-center">
+        <br><br><br><br>
+        <p><strong>Título: </strong>{{livros.nome}}</p>
+        <p><strong>Ano de lançamento: </strong>{{livros.ano_lancamento}}</p>
+        <p><strong>Autor(a): </strong>{{livros.autor}}</p>
+        <p><strong>Descrição: </strong>{{livros.descricao}}</p>
+        <br><br><br><br><br><br><br><br>
+
+        <a href="{% url 'listar_livros' %}" class="btn btn-secondary">voltar</a>
+        <a href="{% url 'editar_livro' id=livros.id %}" class="btn btn-primary">Editar</a>
+        <a href="{% url 'remover_livro' id=livros.id %}" class="btn btn-danger">Apagar</a>
+
+
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}

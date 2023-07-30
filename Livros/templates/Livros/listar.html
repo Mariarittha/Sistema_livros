@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block center %}
+
+<body>
+
+    <div class="container text-center">
+   
+       <div class="row row-cols-2 mt-3">
+        {% for livro in livros %}
+   
+             <div class="col-md-4">
+   
+         <div class="m-5">
+           
+                <h4><strong>{{ livro.nome }}</strong></h4>
+                <hr>
+                <br>            
+                 <img src="{{ livro.imagem.url}}" class="img-fluid  img-thumbnail " style="height: 200; object-fit: cover;"/>
+                
+                <br>
+                <p></p>
+                <!-- <h6>Preço: R${{ produto.preco }}</h6> -->
+                <br>
+                
+                <a href="{% url 'detalhar_livros' id=livro.id %}" class="btn btn-secondary">ver mais..</a>
+              <br>
+         </div>
+             </div>
+            
+         {% endfor %}
+     </div>
+   </div>
+       
+       </body>
+
+
+  {% endblock %}
