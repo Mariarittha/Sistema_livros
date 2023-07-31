@@ -7,7 +7,7 @@
     <div class="row">
 
       <div class="col m-4">
-        <img src="{{ livros.imagem.url }}" alt="">
+        <img src="{{ livros.imagem.url }}" width="400px" height="500px" alt="">
       </div>
 
 
@@ -16,7 +16,7 @@
         <p><strong>Título: </strong>{{livros.nome}}</p>
         <p><strong>Ano de lançamento: </strong>{{livros.ano_lancamento}}</p>
         <p><strong>Autor(a): </strong>{{livros.autor}}</p>
-        <p><strong>Descrição: </strong>{{livros.descricao}}</p>
+        <p><strong>Sinopse: </strong>{{livros.descricao}}</p>
         <br><br><br><br><br><br><br><br>
 
         <a href="{% url 'listar_livros' %}" class="btn btn-secondary">voltar</a>
